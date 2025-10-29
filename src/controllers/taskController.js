@@ -15,7 +15,7 @@ export async function getTask(req, res, next) {
   try {
     const id = Number(req.params.id);
     if (isNaN(id))
-      return res.status(404).json({
+      return res.status(400).json({
         error: 'Validation failed',
         details: ['ID must be a number'],
       });
