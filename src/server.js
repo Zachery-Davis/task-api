@@ -7,7 +7,11 @@ import taskRoutes from './routes/taskRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-app.use(cors());
+app.use(
+  cors({
+    origin: 'https://task-api-s0no.onrender.com',
+  }),
+);
 app.use(express.json());
 app.use(morgan('tiny'));
 
