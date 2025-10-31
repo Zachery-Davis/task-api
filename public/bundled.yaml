@@ -108,6 +108,12 @@ components:
           type: array
           items:
             type: string
+    NotFound:
+      type: object
+      properties:
+        error:
+          type: string
+          example: Input not found
   responses:
     BadRequest:
       description: Invalid input
@@ -120,8 +126,4 @@ components:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              error:
-                type: string
-                example: Input not found
+            $ref: '#/components/schemas/NotFound'
